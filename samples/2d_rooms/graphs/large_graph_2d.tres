@@ -1,0 +1,301 @@
+[gd_resource type="Resource" script_class="LayoutGraphResource" format=3]
+
+[ext_resource type="Script" uid="uid://bwi4yxu5ui4lt" path="res://addons/mpewsey.maniamap/scripts/runtime/graphs/LayoutGraphEdge.cs" id="1_edge"]
+[ext_resource type="Script" uid="uid://bn48o52t2ri22" path="res://addons/mpewsey.maniamap/scripts/runtime/graphs/LayoutGraphResource.cs" id="1_graph"]
+[ext_resource type="Script" uid="uid://dkjl0jus7a3xk" path="res://addons/mpewsey.maniamap/scripts/runtime/graphs/LayoutGraphNode.cs" id="2_node"]
+[ext_resource type="Resource" uid="uid://bupt8af4mptmh" path="res://samples/2d_rooms/template_groups/test_all_rooms.tres" id="3_tg"]
+
+[sub_resource type="Resource" id="e_1_2"]
+script = ExtResource("1_edge")
+FromNode = 1
+ToNode = 2
+Name = "Edge (1, 2)"
+TemplateGroup = ExtResource("3_tg")
+
+[sub_resource type="Resource" id="e_2_3"]
+script = ExtResource("1_edge")
+FromNode = 2
+ToNode = 3
+Name = "Edge (2, 3)"
+TemplateGroup = ExtResource("3_tg")
+
+[sub_resource type="Resource" id="e_3_4"]
+script = ExtResource("1_edge")
+FromNode = 3
+ToNode = 4
+Name = "Edge (3, 4)"
+TemplateGroup = ExtResource("3_tg")
+
+[sub_resource type="Resource" id="e_1_5"]
+script = ExtResource("1_edge")
+FromNode = 1
+ToNode = 5
+Name = "Edge (1, 5)"
+TemplateGroup = ExtResource("3_tg")
+
+[sub_resource type="Resource" id="e_2_7"]
+script = ExtResource("1_edge")
+FromNode = 2
+ToNode = 7
+Name = "Edge (2, 7)"
+TemplateGroup = ExtResource("3_tg")
+
+[sub_resource type="Resource" id="e_4_8"]
+script = ExtResource("1_edge")
+FromNode = 4
+ToNode = 8
+Name = "Edge (4, 8)"
+TemplateGroup = ExtResource("3_tg")
+
+[sub_resource type="Resource" id="e_5_6"]
+script = ExtResource("1_edge")
+FromNode = 5
+ToNode = 6
+Name = "Edge (5, 6)"
+TemplateGroup = ExtResource("3_tg")
+
+[sub_resource type="Resource" id="e_6_7"]
+script = ExtResource("1_edge")
+FromNode = 6
+ToNode = 7
+Name = "Edge (6, 7)"
+TemplateGroup = ExtResource("3_tg")
+
+[sub_resource type="Resource" id="e_7_8"]
+script = ExtResource("1_edge")
+FromNode = 7
+ToNode = 8
+Name = "Edge (7, 8)"
+TemplateGroup = ExtResource("3_tg")
+
+[sub_resource type="Resource" id="e_6_10"]
+script = ExtResource("1_edge")
+FromNode = 6
+ToNode = 10
+Name = "Edge (6, 10)"
+TemplateGroup = ExtResource("3_tg")
+
+[sub_resource type="Resource" id="e_8_12"]
+script = ExtResource("1_edge")
+FromNode = 8
+ToNode = 12
+Name = "Edge (8, 12)"
+TemplateGroup = ExtResource("3_tg")
+
+[sub_resource type="Resource" id="e_9_10"]
+script = ExtResource("1_edge")
+FromNode = 9
+ToNode = 10
+Name = "Edge (9, 10)"
+TemplateGroup = ExtResource("3_tg")
+
+[sub_resource type="Resource" id="e_10_11"]
+script = ExtResource("1_edge")
+FromNode = 10
+ToNode = 11
+Name = "Edge (10, 11)"
+TemplateGroup = ExtResource("3_tg")
+
+[sub_resource type="Resource" id="e_11_12"]
+script = ExtResource("1_edge")
+FromNode = 11
+ToNode = 12
+Name = "Edge (11, 12)"
+TemplateGroup = ExtResource("3_tg")
+
+[sub_resource type="Resource" id="e_9_13"]
+script = ExtResource("1_edge")
+FromNode = 9
+ToNode = 13
+Name = "Edge (9, 13)"
+TemplateGroup = ExtResource("3_tg")
+
+[sub_resource type="Resource" id="e_12_16"]
+script = ExtResource("1_edge")
+FromNode = 12
+ToNode = 16
+Name = "Edge (12, 16)"
+TemplateGroup = ExtResource("3_tg")
+
+[sub_resource type="Resource" id="e_13_14"]
+script = ExtResource("1_edge")
+FromNode = 13
+ToNode = 14
+Name = "Edge (13, 14)"
+TemplateGroup = ExtResource("3_tg")
+
+[sub_resource type="Resource" id="e_14_15"]
+script = ExtResource("1_edge")
+FromNode = 14
+ToNode = 15
+Name = "Edge (14, 15)"
+TemplateGroup = ExtResource("3_tg")
+
+[sub_resource type="Resource" id="e_15_16"]
+script = ExtResource("1_edge")
+FromNode = 15
+ToNode = 16
+Name = "Edge (15, 16)"
+TemplateGroup = ExtResource("3_tg")
+
+[sub_resource type="Resource" id="n_1"]
+script = ExtResource("2_node")
+Id = 1
+Name = "Spawn"
+TemplateGroup = ExtResource("3_tg")
+Color = Color(0.1, 0.8, 0.3, 1)
+Tags = PackedStringArray("spawn")
+Position = Vector2(0, 0)
+PositionConstraint = 1
+
+[sub_resource type="Resource" id="n_2"]
+script = ExtResource("2_node")
+Id = 2
+Name = "Node 2"
+TemplateGroup = ExtResource("3_tg")
+Position = Vector2(260, 0)
+
+[sub_resource type="Resource" id="n_3"]
+script = ExtResource("2_node")
+Id = 3
+Name = "Node 3"
+TemplateGroup = ExtResource("3_tg")
+Position = Vector2(520, 0)
+
+[sub_resource type="Resource" id="n_4"]
+script = ExtResource("2_node")
+Id = 4
+Name = "Node 4"
+TemplateGroup = ExtResource("3_tg")
+Position = Vector2(780, 0)
+
+[sub_resource type="Resource" id="n_5"]
+script = ExtResource("2_node")
+Id = 5
+Name = "Node 5"
+TemplateGroup = ExtResource("3_tg")
+Position = Vector2(0, 260)
+
+[sub_resource type="Resource" id="n_6"]
+script = ExtResource("2_node")
+Id = 6
+Name = "Node 6"
+TemplateGroup = ExtResource("3_tg")
+Position = Vector2(260, 260)
+
+[sub_resource type="Resource" id="n_7"]
+script = ExtResource("2_node")
+Id = 7
+Name = "Node 7"
+TemplateGroup = ExtResource("3_tg")
+Position = Vector2(520, 260)
+
+[sub_resource type="Resource" id="n_8"]
+script = ExtResource("2_node")
+Id = 8
+Name = "Node 8"
+TemplateGroup = ExtResource("3_tg")
+Position = Vector2(780, 260)
+
+[sub_resource type="Resource" id="n_9"]
+script = ExtResource("2_node")
+Id = 9
+Name = "Node 9"
+TemplateGroup = ExtResource("3_tg")
+Position = Vector2(0, 520)
+
+[sub_resource type="Resource" id="n_10"]
+script = ExtResource("2_node")
+Id = 10
+Name = "Node 10"
+TemplateGroup = ExtResource("3_tg")
+Position = Vector2(260, 520)
+
+[sub_resource type="Resource" id="n_11"]
+script = ExtResource("2_node")
+Id = 11
+Name = "Node 11"
+TemplateGroup = ExtResource("3_tg")
+Position = Vector2(520, 520)
+
+[sub_resource type="Resource" id="n_12"]
+script = ExtResource("2_node")
+Id = 12
+Name = "Node 12"
+TemplateGroup = ExtResource("3_tg")
+Position = Vector2(780, 520)
+
+[sub_resource type="Resource" id="n_13"]
+script = ExtResource("2_node")
+Id = 13
+Name = "Node 13"
+TemplateGroup = ExtResource("3_tg")
+Position = Vector2(0, 780)
+
+[sub_resource type="Resource" id="n_14"]
+script = ExtResource("2_node")
+Id = 14
+Name = "Node 14"
+TemplateGroup = ExtResource("3_tg")
+Position = Vector2(260, 780)
+
+[sub_resource type="Resource" id="n_15"]
+script = ExtResource("2_node")
+Id = 15
+Name = "Node 15"
+TemplateGroup = ExtResource("3_tg")
+Position = Vector2(520, 780)
+
+[sub_resource type="Resource" id="n_16"]
+script = ExtResource("2_node")
+Id = 16
+Name = "Exit"
+TemplateGroup = ExtResource("3_tg")
+Color = Color(0.8, 0.1, 0.2, 1)
+Tags = PackedStringArray("extraction")
+Position = Vector2(780, 780)
+PositionConstraint = 3
+
+[resource]
+script = ExtResource("1_graph")
+Id = 1836341200
+Name = "Large Graph 2D"
+Nodes = Dictionary[int, ExtResource("2_node")]({
+1: SubResource("n_1"),
+2: SubResource("n_2"),
+3: SubResource("n_3"),
+4: SubResource("n_4"),
+5: SubResource("n_5"),
+6: SubResource("n_6"),
+7: SubResource("n_7"),
+8: SubResource("n_8"),
+9: SubResource("n_9"),
+10: SubResource("n_10"),
+11: SubResource("n_11"),
+12: SubResource("n_12"),
+13: SubResource("n_13"),
+14: SubResource("n_14"),
+15: SubResource("n_15"),
+16: SubResource("n_16")
+})
+Edges = Dictionary[Vector2i, ExtResource("1_edge")]({
+Vector2i(1, 2): SubResource("e_1_2"),
+Vector2i(2, 3): SubResource("e_2_3"),
+Vector2i(3, 4): SubResource("e_3_4"),
+Vector2i(1, 5): SubResource("e_1_5"),
+Vector2i(2, 7): SubResource("e_2_7"),
+Vector2i(4, 8): SubResource("e_4_8"),
+Vector2i(5, 6): SubResource("e_5_6"),
+Vector2i(6, 7): SubResource("e_6_7"),
+Vector2i(7, 8): SubResource("e_7_8"),
+Vector2i(6, 10): SubResource("e_6_10"),
+Vector2i(8, 12): SubResource("e_8_12"),
+Vector2i(9, 10): SubResource("e_9_10"),
+Vector2i(10, 11): SubResource("e_10_11"),
+Vector2i(11, 12): SubResource("e_11_12"),
+Vector2i(9, 13): SubResource("e_9_13"),
+Vector2i(12, 16): SubResource("e_12_16"),
+Vector2i(13, 14): SubResource("e_13_14"),
+Vector2i(14, 15): SubResource("e_14_15"),
+Vector2i(15, 16): SubResource("e_15_16")
+})

@@ -1,4 +1,5 @@
 using Godot;
+using MPewsey.ManiaMap;
 using MPewsey.ManiaMap.Graphs;
 using System;
 using System.Collections.Generic;
@@ -61,6 +62,12 @@ namespace MPewsey.ManiaMapGodot.Graphs
         /// </summary>
         [Export] public Vector2 Position { get => _position; set => SetField(ref _position, value); }
 
+        private PositionConstraint _positionConstraint;
+        /// <summary>
+        /// The position constraint for this room in the layout.
+        /// </summary>
+        [Export] public PositionConstraint PositionConstraint { get => _positionConstraint; set => SetField(ref _positionConstraint, value); }
+
         private void SetField<T>(ref T field, T value)
         {
             field = value;
@@ -107,6 +114,7 @@ namespace MPewsey.ManiaMapGodot.Graphs
             node.TemplateGroup = TemplateGroup.Name;
             node.Z = Z;
             node.Tags = new List<string>(Tags);
+            node.PositionConstraint = PositionConstraint;
 
             if (!string.IsNullOrWhiteSpace(VariationGroup))
                 graph.AddNodeVariation(VariationGroup, node.Id);

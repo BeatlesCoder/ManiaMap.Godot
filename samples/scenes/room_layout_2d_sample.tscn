@@ -1,20 +1,19 @@
-[gd_scene load_steps=14 format=3 uid="uid://r4g6j31sivcq"]
+[gd_scene format=3 uid="uid://r4g6j31sivcq"]
 
 [ext_resource type="Script" uid="uid://45in2xp8hqux" path="res://samples/scripts/RoomLayout2DSample.cs" id="1_h7rix"]
 [ext_resource type="Resource" uid="uid://cpbx1jxf4xwvd" path="res://samples/2d_rooms/template_groups/2d_room_template_database.tres" id="2_7b3bw"]
 [ext_resource type="Script" uid="uid://bw3jsg7uu2njw" path="res://addons/mpewsey.maniamap/scripts/runtime/generators/GenerationPipeline.cs" id="4_24rdl"]
 [ext_resource type="Script" uid="uid://bb1mpgpxcaqgw" path="res://addons/mpewsey.maniamap/scripts/runtime/generators/GenerationIntInput.cs" id="5_8g857"]
 [ext_resource type="Script" uid="uid://vbt4gpy66dyo" path="res://addons/mpewsey.maniamap/scripts/runtime/generators/LayoutGraphsInput.cs" id="6_2aawm"]
-[ext_resource type="Resource" uid="uid://c2vpyp38ge6oo" path="res://samples/2d_rooms/graphs/cross_graph_2d.tres" id="7_esaaw"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/graphs/large_graph_2d.tres" id="7_esaaw"]
 [ext_resource type="Script" uid="uid://ctte6sh7x4g4v" path="res://addons/mpewsey.maniamap/scripts/runtime/generators/CollectableGroupsInput.cs" id="8_t8pl4"]
-[ext_resource type="Resource" uid="uid://bq7q406xfxw5t" path="res://samples/2d_rooms/collectable_group_2d.tres" id="8_v0uie"]
 [ext_resource type="Script" uid="uid://dqr8dewby6lwb" path="res://addons/mpewsey.maniamap/scripts/runtime/generators/LayoutGraphSelectorStep.cs" id="9_ld5ga"]
 [ext_resource type="Script" uid="uid://6dn00je1235a" path="res://addons/mpewsey.maniamap/scripts/runtime/generators/LayoutGraphRandomizerStep.cs" id="10_a52k0"]
 [ext_resource type="Script" uid="uid://4vwroxnjrnll" path="res://addons/mpewsey.maniamap/scripts/runtime/generators/LayoutGeneratorStep.cs" id="11_ykao8"]
 [ext_resource type="Script" uid="uid://yvcqjmmigfhk" path="res://addons/mpewsey.maniamap/scripts/runtime/generators/CollectableGeneratorStep.cs" id="12_y7aup"]
 [ext_resource type="Script" uid="uid://brxn3x17mpun0" path="res://samples/scripts/Camera2DController.cs" id="13_vrntc"]
 
-[node name="RoomLayout2DSample" type="Node" node_paths=PackedStringArray("Camera", "Container", "Pipeline", "GenerateButton", "MessageLabel")]
+[node name="RoomLayout2DSample" type="Node" unique_id=664972272 node_paths=PackedStringArray("Camera", "Container", "Pipeline", "GenerateButton", "MessageLabel")]
 script = ExtResource("1_h7rix")
 Camera = NodePath("CameraController")
 Container = NodePath("Container")
@@ -23,45 +22,52 @@ GenerateButton = NodePath("UI/HBoxContainer/GenerateButton")
 MessageLabel = NodePath("UI/HBoxContainer/VBoxContainer/MessageLabel")
 RoomTemplateDatabase = ExtResource("2_7b3bw")
 
-[node name="GenerationPipeline" type="Node" parent="."]
+[node name="GenerationPipeline" type="Node" parent="." unique_id=712038422]
 script = ExtResource("4_24rdl")
 ManualInputNames = PackedStringArray("RandomSeed")
 
-[node name="Inputs" type="Node" parent="GenerationPipeline"]
+[node name="Inputs" type="Node" parent="GenerationPipeline" unique_id=1474592895]
 
-[node name="LayoutIdInput" type="Node" parent="GenerationPipeline/Inputs"]
+[node name="LayoutIdInput" type="Node" parent="GenerationPipeline/Inputs" unique_id=1667255091]
 script = ExtResource("5_8g857")
 InputName = "LayoutId"
 Value = 530369953
 
-[node name="LayoutGraphsInput" type="Node" parent="GenerationPipeline/Inputs"]
+[node name="LayoutGraphsInput" type="Node" parent="GenerationPipeline/Inputs" unique_id=19575336]
 script = ExtResource("6_2aawm")
 LayoutGraphs = [ExtResource("7_esaaw")]
 
-[node name="CollectableGroupsInput" type="Node" parent="GenerationPipeline/Inputs"]
+[node name="CollectableGroupsInput" type="Node" parent="GenerationPipeline/Inputs" unique_id=580801021]
 script = ExtResource("8_t8pl4")
-CollectableGroups = [ExtResource("8_v0uie")]
+CollectableGroups = []
 
-[node name="Steps" type="Node" parent="GenerationPipeline"]
+[node name="Steps" type="Node" parent="GenerationPipeline" unique_id=447064317]
 
-[node name="LayoutGraphSelectorStep" type="Node" parent="GenerationPipeline/Steps"]
+[node name="LayoutGraphSelectorStep" type="Node" parent="GenerationPipeline/Steps" unique_id=878486841]
 script = ExtResource("9_ld5ga")
 
-[node name="LayoutGraphRandomizerStep" type="Node" parent="GenerationPipeline/Steps"]
+[node name="LayoutGraphRandomizerStep" type="Node" parent="GenerationPipeline/Steps" unique_id=1101146134]
 script = ExtResource("10_a52k0")
 
-[node name="LayoutGeneratorStep" type="Node" parent="GenerationPipeline/Steps"]
+[node name="LayoutGeneratorStep" type="Node" parent="GenerationPipeline/Steps" unique_id=2007846114]
 script = ExtResource("11_ykao8")
+MaxMapWidth = 30
+MaxMapHeight = 30
+DistanceConstraints = Array[Dictionary]([{
+"MinDistance": "8",
+"TagA": "spawn",
+"TagB": "extraction"
+}])
 
-[node name="CollectableGeneratorStep" type="Node" parent="GenerationPipeline/Steps"]
+[node name="CollectableGeneratorStep" type="Node" parent="GenerationPipeline/Steps" unique_id=710941705]
 script = ExtResource("12_y7aup")
 
-[node name="Container" type="Node2D" parent="."]
+[node name="Container" type="Node2D" parent="." unique_id=290222670]
 
-[node name="Background" type="CanvasLayer" parent="."]
+[node name="Background" type="CanvasLayer" parent="." unique_id=534140497]
 layer = -1
 
-[node name="ColorRect" type="ColorRect" parent="Background"]
+[node name="ColorRect" type="ColorRect" parent="Background" unique_id=1451936424]
 top_level = true
 anchors_preset = 15
 anchor_right = 1.0
@@ -71,9 +77,9 @@ grow_vertical = 2
 mouse_filter = 1
 color = Color(0.145098, 0.0745098, 0.101961, 1)
 
-[node name="UI" type="CanvasLayer" parent="."]
+[node name="UI" type="CanvasLayer" parent="." unique_id=1399693920]
 
-[node name="InputsLabel" type="Label" parent="UI"]
+[node name="InputsLabel" type="Label" parent="UI" unique_id=1178314300]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -86,7 +92,7 @@ text = "Scroll = Left Mouse Click & Drag
 Zoom = Middle Mouse Wheel"
 vertical_alignment = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI"]
+[node name="HBoxContainer" type="HBoxContainer" parent="UI" unique_id=390513635]
 top_level = true
 anchors_preset = 3
 anchor_left = 1.0
@@ -101,19 +107,19 @@ grow_horizontal = 0
 grow_vertical = 0
 alignment = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/HBoxContainer" unique_id=893032190]
 layout_mode = 2
 alignment = 1
 
-[node name="MessageLabel" type="RichTextLabel" parent="UI/HBoxContainer/VBoxContainer"]
+[node name="MessageLabel" type="RichTextLabel" parent="UI/HBoxContainer/VBoxContainer" unique_id=850391570]
 layout_mode = 2
 bbcode_enabled = true
 fit_content = true
 autowrap_mode = 0
 
-[node name="GenerateButton" type="Button" parent="UI/HBoxContainer"]
+[node name="GenerateButton" type="Button" parent="UI/HBoxContainer" unique_id=1634409219]
 layout_mode = 2
 text = "Generate"
 
-[node name="CameraController" type="Camera2D" parent="."]
+[node name="CameraController" type="Camera2D" parent="." unique_id=410384764]
 script = ExtResource("13_vrntc")
