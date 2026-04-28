@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://dggf3wbmbu5pj" path="res://addons/mpewsey.maniamap/scripts/runtime/RoomTemplateDatabase.cs" id="1_axphe"]
 [ext_resource type="Resource" path="res://samples/2d_rooms/template_groups/test_all_rooms.tres" id="1_g5l8n"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/template_groups/spawn_rooms.tres" id="2_spawn"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/template_groups/exit_rooms.tres" id="3_exit"]
 
 [resource]
 script = ExtResource("1_axphe")
-TemplateGroups = [ExtResource("1_g5l8n")]
+TemplateGroups = [ExtResource("1_g5l8n"), ExtResource("2_spawn"), ExtResource("3_exit")]

@@ -1,0 +1,27 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://samples/scripts/TemplateViewer.cs" id="1_viewer"]
+[ext_resource type="Resource" uid="uid://cpbx1jxf4xwvd" path="res://samples/2d_rooms/template_groups/2d_room_template_database.tres" id="2_db"]
+
+[node name="TemplateViewer" type="Node2D"]
+script = ExtResource("1_viewer")
+RoomTemplateDatabase = ExtResource("2_db")
+CellSize = 48.0
+Spacing = 32.0
+ColumnsPerRow = 6
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+top_level = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0.11, 0.07, 0.1, 1)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(400, 400)

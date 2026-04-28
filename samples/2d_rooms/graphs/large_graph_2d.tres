@@ -1,15 +1,24 @@
-[gd_resource type="Resource" script_class="LayoutGraphResource" format=3]
+[gd_resource type="Resource" script_class="LayoutGraphResource" format=3 uid="uid://deb0kwqwujusc"]
 
 [ext_resource type="Script" uid="uid://bwi4yxu5ui4lt" path="res://addons/mpewsey.maniamap/scripts/runtime/graphs/LayoutGraphEdge.cs" id="1_edge"]
 [ext_resource type="Script" uid="uid://bn48o52t2ri22" path="res://addons/mpewsey.maniamap/scripts/runtime/graphs/LayoutGraphResource.cs" id="1_graph"]
 [ext_resource type="Script" uid="uid://dkjl0jus7a3xk" path="res://addons/mpewsey.maniamap/scripts/runtime/graphs/LayoutGraphNode.cs" id="2_node"]
 [ext_resource type="Resource" uid="uid://bupt8af4mptmh" path="res://samples/2d_rooms/template_groups/test_all_rooms.tres" id="3_tg"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/template_groups/spawn_rooms.tres" id="4_spawn"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/template_groups/exit_rooms.tres" id="5_exit"]
 
 [sub_resource type="Resource" id="e_1_2"]
 script = ExtResource("1_edge")
 FromNode = 1
 ToNode = 2
 Name = "Edge (1, 2)"
+TemplateGroup = ExtResource("3_tg")
+
+[sub_resource type="Resource" id="e_1_5"]
+script = ExtResource("1_edge")
+FromNode = 2
+ToNode = 5
+Name = "Edge (2, 5)"
 TemplateGroup = ExtResource("3_tg")
 
 [sub_resource type="Resource" id="e_2_3"]
@@ -19,25 +28,18 @@ ToNode = 3
 Name = "Edge (2, 3)"
 TemplateGroup = ExtResource("3_tg")
 
-[sub_resource type="Resource" id="e_3_4"]
-script = ExtResource("1_edge")
-FromNode = 3
-ToNode = 4
-Name = "Edge (3, 4)"
-TemplateGroup = ExtResource("3_tg")
-
-[sub_resource type="Resource" id="e_1_5"]
-script = ExtResource("1_edge")
-FromNode = 1
-ToNode = 5
-Name = "Edge (1, 5)"
-TemplateGroup = ExtResource("3_tg")
-
 [sub_resource type="Resource" id="e_2_7"]
 script = ExtResource("1_edge")
 FromNode = 2
 ToNode = 7
 Name = "Edge (2, 7)"
+TemplateGroup = ExtResource("3_tg")
+
+[sub_resource type="Resource" id="e_3_4"]
+script = ExtResource("1_edge")
+FromNode = 3
+ToNode = 4
+Name = "Edge (3, 4)"
 TemplateGroup = ExtResource("3_tg")
 
 [sub_resource type="Resource" id="e_4_8"]
@@ -61,18 +63,18 @@ ToNode = 7
 Name = "Edge (6, 7)"
 TemplateGroup = ExtResource("3_tg")
 
-[sub_resource type="Resource" id="e_7_8"]
-script = ExtResource("1_edge")
-FromNode = 7
-ToNode = 8
-Name = "Edge (7, 8)"
-TemplateGroup = ExtResource("3_tg")
-
 [sub_resource type="Resource" id="e_6_10"]
 script = ExtResource("1_edge")
 FromNode = 6
 ToNode = 10
 Name = "Edge (6, 10)"
+TemplateGroup = ExtResource("3_tg")
+
+[sub_resource type="Resource" id="e_7_8"]
+script = ExtResource("1_edge")
+FromNode = 7
+ToNode = 8
+Name = "Edge (7, 8)"
 TemplateGroup = ExtResource("3_tg")
 
 [sub_resource type="Resource" id="e_8_12"]
@@ -89,6 +91,13 @@ ToNode = 10
 Name = "Edge (9, 10)"
 TemplateGroup = ExtResource("3_tg")
 
+[sub_resource type="Resource" id="e_9_13"]
+script = ExtResource("1_edge")
+FromNode = 9
+ToNode = 13
+Name = "Edge (9, 13)"
+TemplateGroup = ExtResource("3_tg")
+
 [sub_resource type="Resource" id="e_10_11"]
 script = ExtResource("1_edge")
 FromNode = 10
@@ -101,13 +110,6 @@ script = ExtResource("1_edge")
 FromNode = 11
 ToNode = 12
 Name = "Edge (11, 12)"
-TemplateGroup = ExtResource("3_tg")
-
-[sub_resource type="Resource" id="e_9_13"]
-script = ExtResource("1_edge")
-FromNode = 9
-ToNode = 13
-Name = "Edge (9, 13)"
 TemplateGroup = ExtResource("3_tg")
 
 [sub_resource type="Resource" id="e_12_16"]
@@ -142,10 +144,9 @@ TemplateGroup = ExtResource("3_tg")
 script = ExtResource("2_node")
 Id = 1
 Name = "Spawn"
-TemplateGroup = ExtResource("3_tg")
+TemplateGroup = ExtResource("4_spawn")
 Color = Color(0.1, 0.8, 0.3, 1)
 Tags = PackedStringArray("spawn")
-Position = Vector2(0, 0)
 PositionConstraint = 1
 
 [sub_resource type="Resource" id="n_2"]
@@ -250,7 +251,7 @@ Position = Vector2(520, 780)
 script = ExtResource("2_node")
 Id = 16
 Name = "Exit"
-TemplateGroup = ExtResource("3_tg")
+TemplateGroup = ExtResource("5_exit")
 Color = Color(0.8, 0.1, 0.2, 1)
 Tags = PackedStringArray("extraction")
 Position = Vector2(780, 780)
@@ -281,19 +282,19 @@ Nodes = Dictionary[int, ExtResource("2_node")]({
 Edges = Dictionary[Vector2i, ExtResource("1_edge")]({
 Vector2i(1, 2): SubResource("e_1_2"),
 Vector2i(2, 3): SubResource("e_2_3"),
-Vector2i(3, 4): SubResource("e_3_4"),
-Vector2i(1, 5): SubResource("e_1_5"),
+Vector2i(2, 5): SubResource("e_1_5"),
 Vector2i(2, 7): SubResource("e_2_7"),
+Vector2i(3, 4): SubResource("e_3_4"),
 Vector2i(4, 8): SubResource("e_4_8"),
 Vector2i(5, 6): SubResource("e_5_6"),
 Vector2i(6, 7): SubResource("e_6_7"),
-Vector2i(7, 8): SubResource("e_7_8"),
 Vector2i(6, 10): SubResource("e_6_10"),
+Vector2i(7, 8): SubResource("e_7_8"),
 Vector2i(8, 12): SubResource("e_8_12"),
 Vector2i(9, 10): SubResource("e_9_10"),
+Vector2i(9, 13): SubResource("e_9_13"),
 Vector2i(10, 11): SubResource("e_10_11"),
 Vector2i(11, 12): SubResource("e_11_12"),
-Vector2i(9, 13): SubResource("e_9_13"),
 Vector2i(12, 16): SubResource("e_12_16"),
 Vector2i(13, 14): SubResource("e_13_14"),
 Vector2i(14, 15): SubResource("e_14_15"),

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="TemplateGroup" load_steps=4 format=3]
+
+[ext_resource type="Script" uid="uid://bvntr8xean7iy" path="res://addons/mpewsey.maniamap/scripts/runtime/TemplateGroup.cs" id="1_tg"]
+[ext_resource type="Script" uid="uid://k1wsok8j1w3u" path="res://addons/mpewsey.maniamap/scripts/runtime/TemplateGroupEntry.cs" id="2_tge"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/exit_3x3.room_template.tres" id="tpl_0"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/exit_3x4.room_template.tres" id="tpl_1"]
+
+[sub_resource type="Resource" id="entry_0"]
+script = ExtResource("2_tge")
+RoomTemplate = ExtResource("tpl_0")
+
+[sub_resource type="Resource" id="entry_1"]
+script = ExtResource("2_tge")
+RoomTemplate = ExtResource("tpl_1")
+
+[resource]
+script = ExtResource("1_tg")
+Name = "Exit Rooms"
+Entries = [SubResource("entry_0"), SubResource("entry_1")]
