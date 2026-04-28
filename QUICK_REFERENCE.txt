@@ -1,0 +1,161 @@
+================================================================================
+MANIAMAP SPATIAL LAYOUT - QUICK REFERENCE CARD
+================================================================================
+
+Q1: Does graph structure influence spatial placement order?
+A1: NO. Placement uses RandomSeed, not graph traversal order.
+    File: LayoutGeneratorStep.cs, Line 36-39
+    Proof: RandomSeed is required input
+    
+Q2: Does room adjacency algorithm try ALL positions?
+A2: NO. Uses door matching, retries with new seed (seed + i*1447).
+    File: GenerationPipeline.cs, Line 208
+    Proof: Each attempt increments seed, doesn't enumerate positions
+    
+Q3: Can we inspect Room.Position data?
+A3: YES. Use layout.Rooms[roomId].Position (Vector2DInt).
+    File: RoomNode2D.cs, Line 342
+    Access: room.Position.X = row, room.Position.Y = column
+    
+Q4: Can we validate/reject layouts based on room positions?
+A4: YES. Write custom GenerationStep that throws exception.
+    File: GenerationStep.cs (base class)
+    Flow: If step throws → results.Success=false → retry with new seed
+    
+Q5: How does RunAttemptsAsync retry work?
+A5: Loops up to 10 times (default), incrementing seed by 1447 each attempt.
+    File: GenerationPipeline.cs, Line 208
+    Formula: seed + i * 1447 (i=0,1,2,...)
+    Default: 10 attempts, 5000ms timeout each
+
+================================================================================
+FILE LOCATIONS
+================================================================================
+
+LayoutGeneratorStep.cs
+  Path: addons/mpewsey.maniamap/scripts/runtime/generators/
+  
+GenerationPipeline.cs
+  Path: addons/mpewsey.maniamap/scripts/runtime/generators/
+  
+RoomNode2D.cs
+  Path: addons/mpewsey.maniamap/scripts/runtime/
+  
+GenerationStep.cs (base class)
+  Path: addons/mpewsey.maniamap/scripts/runtime/generators/
+  
+RoomLayout2DSample.cs (usage example)
+  Path: samples/scripts/
+
+================================================================================
+KEY CODE SNIPPETS
+================================================================================
+
+1. ACCESS ROOM POSITIONS:
+   foreach (var kvp in layout.Rooms)
+   {
+       var room = kvp.Value;
+       var pos = room.Position;  // Vector2DInt
+       GD.Print($"Row: {pos.X}, Col: {pos.Y}");
+   }
+
+2. WRITE CUSTOM VALIDATION STEP:
+   public partial class MyValidationStep : GenerationStep
+   {
+       public override IPipelineStep CreateStep() 
+           => new MyValidationPipelineStep();
+       
+       public override string[] RequiredInputNames() 
+           => new[] { "Layout" };
+       
+       public override string[] OutputNames() 
+           => Array.Empty<string>();
+   }
+   
+   public class MyValidationPipelineStep : IPipelineStep
+   {
+       public void Run(PipelineInput input)
+       {
+           input.TryGetInput("Layout", out Layout layout);
+           
+           // Validate...
+           if (invalid) throw new InvalidOperationException("reason");
+       }
+   }
+
+3. CALL RUNATTEMPTS:
+   var results = await Pipeline.RunAttemptsAsync(seed);
+   // Retries up to 10 times with seed+1447, seed+2894, etc.
+
+4. SEED RETRY FORMULA:
+   Attempt i: seed + i * 1447
+   i=0: seed + 0 = seed
+   i=1: seed + 1447
+   i=2: seed + 2894
+   ... (up to 10 attempts)
+
+================================================================================
+COORDINATE SYSTEM
+================================================================================
+
+Room.Position = Vector2DInt
+  X = Row (0, 1, 2, ...)
+  Y = Column (0, 1, 2, ...)
+
+Grid layout (with cells):
+  (0,0) (0,1) (0,2) ...
+  (1,0) (1,1) (1,2) ...
+  (2,0) (2,1) (2,2) ...
+  ...
+
+World conversion (CellSize = 96x96):
+  WorldX = Position.Y * CellSize.X = Position.Y * 96
+  WorldY = Position.X * CellSize.Y = Position.X * 96
+
+Example:
+  Position(3, 5) → Row 3, Col 5
+  World: (5*96, 3*96) = (480, 288)
+
+================================================================================
+PIPELINE EXECUTION ORDER
+================================================================================
+
+1. LayoutGraphSelectorStep
+2. LayoutGraphRandomizerStep
+3. LayoutGeneratorStep (generates spatial layout)
+4. [YOUR CUSTOM VALIDATION STEP] ← Insert here
+5. CollectableGeneratorStep
+
+If any step throws → results.Success = false → RunAttemptsAsync retries with new seed
+
+================================================================================
+LINE NUMBER REFERENCE
+================================================================================
+
+LayoutGeneratorStep.cs
+  Line 36-39: RequiredInputNames includes "RandomSeed"
+
+GenerationPipeline.cs
+  Line 200: RunAttemptsAsync signature (10 attempts, 5000ms timeout)
+  Line 204: for (int i = 0; i < attempts; i++)
+  Line 208: inputs.Add("RandomSeed", new RandomSeed(seed + i * 1447))
+  Line 210: var results = await RunAsync(inputs, logger, token)
+  Line 212: if (results.Success)
+
+RoomNode2D.cs
+  Line 342: var position = RoomLayout.Position
+
+RoomLayout2DSample.cs
+  Line 45: var results = await Pipeline.RunAttemptsAsync(seed)
+  Line 55: var layout = results.GetOutput<Layout>("Layout")
+
+================================================================================
+NUGET DEPENDENCY
+================================================================================
+
+Core library: MPewsey.ManiaMap v2.5.3
+  LayoutGenerator: Handles spatial placement (randomized)
+  Layout: Contains layout.Rooms (Dictionary<Uid, Room>)
+  Room: Has Room.Position (Vector2DInt)
+
+================================================================================

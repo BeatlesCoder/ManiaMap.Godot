@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cat)",
+      "Read(//tmp/**)",
+      "Bash(xargs grep *)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Read(//d/UGit/**)",
+      "Bash(ls -d ManiaMap*)",
+      "Bash(find /d/UGit -maxdepth 2 -name \"LayoutGenerator.cs\")"
+    ]
+  }
+}
