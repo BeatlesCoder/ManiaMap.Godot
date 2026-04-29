@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="RoomTemplateResource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/mpewsey.maniamap/scripts/runtime/RoomTemplateResource.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+EditId = false
+Id = 2000154
+TemplateName = "L32r_nsw"
+ScenePath = "res://samples/2d_rooms/test_rooms/L32r_nsw.tscn"
+SceneUidPath = ""
+SerializedText = "{\"Id\":2000154,\"Name\":\"L32r_nsw\",\"Cells\":{\"Rows\":3,\"Columns\":2,\"Array\":[null,{\"Doors\":{\"Map\":[{\"Key\":0,\"Value\":{\"Type\":0,\"Code\":0}}]},\"Features\":[]},null,{\"Doors\":{\"Map\":[]},\"Features\":[]},{\"Doors\":{\"Map\":[{\"Key\":1,\"Value\":{\"Type\":0,\"Code\":0}},{\"Key\":3,\"Value\":{\"Type\":0,\"Code\":0}}]},\"Features\":[]},{\"Doors\":{\"Map\":[]},\"Features\":[]}]},\"CollectableSpots\":{\"Map\":[]}}"

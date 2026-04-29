@@ -36,64 +36,213 @@ namespace MPewsey.ManiaMapGodot.Samples
 
             var all = new List<string>(); // paths to .room_template.tres
 
-            // ===== Rectangular rooms =====
-            all.Add(MakeRoom("room_1x1", 1, 1, Full(1, 1)));
-            all.Add(MakeRoom("room_1x2", 1, 2, Full(1, 2)));
-            all.Add(MakeRoom("room_2x1", 2, 1, Full(2, 1)));
-            all.Add(MakeRoom("room_2x2", 2, 2, Full(2, 2)));
-            all.Add(MakeRoom("room_1x3", 1, 3, Full(1, 3)));
-            all.Add(MakeRoom("room_3x2", 3, 2, Full(3, 2)));
-            all.Add(MakeRoom("room_2x3", 2, 3, Full(2, 3)));
-            all.Add(MakeRoom("room_3x3", 3, 3, Full(3, 3)));
-            all.Add(MakeRoom("room_4x3", 4, 3, Full(4, 3)));
+            // ==================== 1x1 单格 (1~2门) ====================
+            all.Add(MakeRoom("sq1_n",  1, 1, Full(1, 1), new List<DoorDef>{ D(0,0,0) }));
+            all.Add(MakeRoom("sq1_s",  1, 1, Full(1, 1), new List<DoorDef>{ D(0,0,1) }));
+            all.Add(MakeRoom("sq1_e",  1, 1, Full(1, 1), new List<DoorDef>{ D(0,0,2) }));
+            all.Add(MakeRoom("sq1_w",  1, 1, Full(1, 1), new List<DoorDef>{ D(0,0,3) }));
+            all.Add(MakeRoom("sq1_ns", 1, 1, Full(1, 1), new List<DoorDef>{ D(0,0,0), D(0,0,1) }));
+            all.Add(MakeRoom("sq1_ew", 1, 1, Full(1, 1), new List<DoorDef>{ D(0,0,2), D(0,0,3) }));
 
-            // ===== L-shaped rooms =====
-            all.Add(MakeRoom("room_L_2x2", 2, 2, new[] {
+            // ==================== 1x2 横向双格 (2门) ====================
+            all.Add(MakeRoom("h2_ew", 1, 2, Full(1, 2), new List<DoorDef>{ D(0,0,3), D(0,1,2) }));
+            all.Add(MakeRoom("h2_ns", 1, 2, Full(1, 2), new List<DoorDef>{ D(0,0,0), D(0,1,1) }));
+            all.Add(MakeRoom("h2_ne", 1, 2, Full(1, 2), new List<DoorDef>{ D(0,0,0), D(0,1,2) }));
+            all.Add(MakeRoom("h2_sw", 1, 2, Full(1, 2), new List<DoorDef>{ D(0,1,1), D(0,0,3) }));
+
+            // ==================== 2x1 纵向双格 (2门) ====================
+            all.Add(MakeRoom("v2_ns", 2, 1, Full(2, 1), new List<DoorDef>{ D(0,0,0), D(1,0,1) }));
+            all.Add(MakeRoom("v2_ew", 2, 1, Full(2, 1), new List<DoorDef>{ D(0,0,2), D(1,0,3) }));
+            all.Add(MakeRoom("v2_nw", 2, 1, Full(2, 1), new List<DoorDef>{ D(0,0,0), D(1,0,3) }));
+            all.Add(MakeRoom("v2_se", 2, 1, Full(2, 1), new List<DoorDef>{ D(1,0,1), D(0,0,2) }));
+
+            // ==================== 2x2 方形 (2~3门) ====================
+            all.Add(MakeRoom("sq4_ne",  2, 2, Full(2, 2), new List<DoorDef>{ D(0,0,0), D(1,1,2) }));
+            all.Add(MakeRoom("sq4_nw",  2, 2, Full(2, 2), new List<DoorDef>{ D(0,1,0), D(1,0,3) }));
+            all.Add(MakeRoom("sq4_se",  2, 2, Full(2, 2), new List<DoorDef>{ D(1,0,1), D(0,1,2) }));
+            all.Add(MakeRoom("sq4_sw",  2, 2, Full(2, 2), new List<DoorDef>{ D(1,1,1), D(0,0,3) }));
+            all.Add(MakeRoom("sq4_nse", 2, 2, Full(2, 2), new List<DoorDef>{ D(0,0,0), D(1,1,1), D(0,1,2) }));
+            all.Add(MakeRoom("sq4_nsw", 2, 2, Full(2, 2), new List<DoorDef>{ D(0,1,0), D(1,0,1), D(0,0,3) }));
+
+            // ==================== 1x3 长横廊 (2~3门) ====================
+            all.Add(MakeRoom("h3_ew",  1, 3, Full(1, 3), new List<DoorDef>{ D(0,0,3), D(0,2,2) }));
+            all.Add(MakeRoom("h3_ews", 1, 3, Full(1, 3), new List<DoorDef>{ D(0,0,3), D(0,2,2), D(0,1,1) }));
+
+            // ==================== 2x3 宽房 (2~3门) ====================
+            all.Add(MakeRoom("w23_ns",  2, 3, Full(2, 3), new List<DoorDef>{ D(0,1,0), D(1,1,1) }));
+            all.Add(MakeRoom("w23_nse", 2, 3, Full(2, 3), new List<DoorDef>{ D(0,1,0), D(1,1,1), D(1,2,2) }));
+
+            // ==================== 3x2 高房 (2~3门) ====================
+            all.Add(MakeRoom("t32_ns",  3, 2, Full(3, 2), new List<DoorDef>{ D(0,0,0), D(2,1,1) }));
+            all.Add(MakeRoom("t32_nsw", 3, 2, Full(3, 2), new List<DoorDef>{ D(0,1,0), D(2,0,1), D(1,0,3) }));
+
+            // ==================== 3x3 大方形 (2~4门) ====================
+            all.Add(MakeRoom("big9_ns",    3, 3, Full(3, 3), new List<DoorDef>{ D(0,1,0), D(2,1,1) }));
+            all.Add(MakeRoom("big9_ew",    3, 3, Full(3, 3), new List<DoorDef>{ D(1,0,3), D(1,2,2) }));
+            all.Add(MakeRoom("big9_cross", 3, 3, Full(3, 3), new List<DoorDef>{ D(0,1,0), D(2,1,1), D(1,2,2), D(1,0,3) }));
+            all.Add(MakeRoom("big9_nse",   3, 3, Full(3, 3), new List<DoorDef>{ D(0,1,0), D(2,1,1), D(1,2,2) }));
+
+            // ==================== 4x3 超大 (2~4门) ====================
+            all.Add(MakeRoom("big43_ns",    4, 3, Full(4, 3), new List<DoorDef>{ D(0,1,0), D(3,1,1) }));
+            all.Add(MakeRoom("big43_cross", 4, 3, Full(4, 3), new List<DoorDef>{ D(0,1,0), D(3,1,1), D(2,2,2), D(1,0,3) }));
+
+            // ==================== L形 2x2 (2门) ====================
+            // ■ .    门在左上(N)和右下(S)
+            // ■ ■
+            all.Add(MakeRoom("L2_ns", 2, 2, new[] {
                 new[] { true, false },
                 new[] { true, true },
-            }));
-            all.Add(MakeRoom("room_L_3x2", 3, 2, new[] {
+            }, new List<DoorDef>{ D(0,0,0), D(1,1,1) }));
+
+            // . ■    门在右上(N)和左下(W)
+            // ■ ■
+            all.Add(MakeRoom("L2_nw", 2, 2, new[] {
+                new[] { false, true },
+                new[] { true, true },
+            }, new List<DoorDef>{ D(0,1,0), D(1,0,3) }));
+
+            // ■ ■    门在左上(W)和右下(E)
+            // . ■
+            all.Add(MakeRoom("L2_we", 2, 2, new[] {
+                new[] { true, true },
+                new[] { false, true },
+            }, new List<DoorDef>{ D(0,0,3), D(1,1,2) }));
+
+            // ■ ■    门在右上(E)和左下(S)
+            // ■ .
+            all.Add(MakeRoom("L2_es", 2, 2, new[] {
+                new[] { true, true },
+                new[] { true, false },
+            }, new List<DoorDef>{ D(0,1,2), D(1,0,1) }));
+
+            // ==================== L形 3x2 (2~3门) ====================
+            // ■ .
+            // ■ .
+            // ■ ■
+            all.Add(MakeRoom("L32_ns", 3, 2, new[] {
                 new[] { true, false },
                 new[] { true, false },
                 new[] { true, true },
-            }));
-            all.Add(MakeRoom("room_L_3x3", 3, 3, new[] {
+            }, new List<DoorDef>{ D(0,0,0), D(2,1,1) }));
+
+            all.Add(MakeRoom("L32_nse", 3, 2, new[] {
+                new[] { true, false },
+                new[] { true, false },
+                new[] { true, true },
+            }, new List<DoorDef>{ D(0,0,0), D(2,1,1), D(2,1,2) }));
+
+            // . ■
+            // . ■
+            // ■ ■
+            all.Add(MakeRoom("L32r_nsw", 3, 2, new[] {
+                new[] { false, true },
+                new[] { false, true },
+                new[] { true, true },
+            }, new List<DoorDef>{ D(0,1,0), D(2,0,1), D(2,0,3) }));
+
+            // ==================== L形 3x3 (2~3门) ====================
+            // ■ . .
+            // ■ . .
+            // ■ ■ ■
+            all.Add(MakeRoom("L33_nse", 3, 3, new[] {
                 new[] { true, false, false },
                 new[] { true, false, false },
                 new[] { true, true, true },
-            }));
+            }, new List<DoorDef>{ D(0,0,0), D(2,2,1), D(2,2,2) }));
 
-            // ===== T-shaped rooms =====
-            all.Add(MakeRoom("room_T_2x3", 2, 3, new[] {
+            // . . ■
+            // . . ■
+            // ■ ■ ■
+            all.Add(MakeRoom("L33r_nsw", 3, 3, new[] {
+                new[] { false, false, true },
+                new[] { false, false, true },
                 new[] { true, true, true },
-                new[] { false, true, false },
-            }));
-            all.Add(MakeRoom("room_T_3x3", 3, 3, new[] {
-                new[] { true, true, true },
-                new[] { false, true, false },
-                new[] { false, true, false },
-            }));
-            all.Add(MakeRoom("room_T_inv_3x3", 3, 3, new[] {
-                new[] { false, true, false },
-                new[] { false, true, false },
-                new[] { true, true, true },
-            }));
-            all.Add(MakeRoom("room_T_4x3", 4, 3, new[] {
-                new[] { true, true, true },
-                new[] { false, true, false },
-                new[] { false, true, false },
-                new[] { false, true, false },
-            }));
+            }, new List<DoorDef>{ D(0,2,0), D(2,0,1), D(2,0,3) }));
 
-            // Create template group .tres by writing text file
+            // ■ ■ ■
+            // ■ . .
+            // ■ . .
+            all.Add(MakeRoom("L33_top_sw", 3, 3, new[] {
+                new[] { true, true, true },
+                new[] { true, false, false },
+                new[] { true, false, false },
+            }, new List<DoorDef>{ D(0,2,0), D(2,0,1), D(0,2,2) }));
+
+            // ■ ■ ■
+            // . . ■
+            // . . ■
+            all.Add(MakeRoom("L33_top_se", 3, 3, new[] {
+                new[] { true, true, true },
+                new[] { false, false, true },
+                new[] { false, false, true },
+            }, new List<DoorDef>{ D(0,0,0), D(2,2,1), D(0,0,3) }));
+
+            // ==================== T形 2x3 (2~3门) ====================
+            // ■ ■ ■
+            // . ■ .
+            all.Add(MakeRoom("T23_ns", 2, 3, new[] {
+                new[] { true, true, true },
+                new[] { false, true, false },
+            }, new List<DoorDef>{ D(0,0,0), D(1,1,1) }));
+
+            all.Add(MakeRoom("T23_nwe", 2, 3, new[] {
+                new[] { true, true, true },
+                new[] { false, true, false },
+            }, new List<DoorDef>{ D(0,1,0), D(0,0,3), D(0,2,2) }));
+
+            // . ■ .
+            // ■ ■ ■
+            all.Add(MakeRoom("T23_inv_ns", 2, 3, new[] {
+                new[] { false, true, false },
+                new[] { true, true, true },
+            }, new List<DoorDef>{ D(0,1,0), D(1,1,1) }));
+
+            all.Add(MakeRoom("T23_inv_swe", 2, 3, new[] {
+                new[] { false, true, false },
+                new[] { true, true, true },
+            }, new List<DoorDef>{ D(1,1,1), D(1,0,3), D(1,2,2) }));
+
+            // ==================== T形 3x3 (2~3门) ====================
+            // ■ ■ ■
+            // . ■ .
+            // . ■ .
+            all.Add(MakeRoom("T33_ns", 3, 3, new[] {
+                new[] { true, true, true },
+                new[] { false, true, false },
+                new[] { false, true, false },
+            }, new List<DoorDef>{ D(0,0,0), D(2,1,1) }));
+
+            all.Add(MakeRoom("T33_nwe", 3, 3, new[] {
+                new[] { true, true, true },
+                new[] { false, true, false },
+                new[] { false, true, false },
+            }, new List<DoorDef>{ D(0,1,0), D(0,0,3), D(0,2,2) }));
+
+            // . ■ .
+            // . ■ .
+            // ■ ■ ■
+            all.Add(MakeRoom("T33_inv_ns", 3, 3, new[] {
+                new[] { false, true, false },
+                new[] { false, true, false },
+                new[] { true, true, true },
+            }, new List<DoorDef>{ D(0,1,0), D(2,1,1) }));
+
+            all.Add(MakeRoom("T33_inv_swe", 3, 3, new[] {
+                new[] { false, true, false },
+                new[] { false, true, false },
+                new[] { true, true, true },
+            }, new List<DoorDef>{ D(2,1,1), D(2,0,3), D(2,2,2) }));
+
+            // Create template group
             SaveTemplateGroup("test_all_rooms", "Test All Rooms", all);
 
             GD.Print($"[RoomTemplateGenerator] Done! Generated {all.Count} room templates.");
-            GD.Print("[RoomTemplateGenerator] Next steps:");
-            GD.Print("  1. Open 2d_room_template_database.tres, add test_all_rooms.tres to TemplateGroups array");
-            GD.Print("  2. Open cross_graph_2d.tres, change each node's TemplateGroup to 'test_all_rooms'");
-            GD.Print("  3. Run the scene and click Generate");
         }
+
+        /// <summary>
+        /// Helper to create a DoorDef concisely. dir: 0=N, 1=S, 2=E, 3=W.
+        /// </summary>
+        private static DoorDef D(int row, int col, int dir) => new DoorDef { Row = row, Col = col, Dir = dir };
 
         // ==================== Room creation ====================
 
@@ -104,8 +253,12 @@ namespace MPewsey.ManiaMapGodot.Samples
 
         private string MakeRoom(string name, int rows, int cols, bool[][] cells)
         {
+            return MakeRoom(name, rows, cols, cells, FindOuterDoors(rows, cols, cells));
+        }
+
+        private string MakeRoom(string name, int rows, int cols, bool[][] cells, List<DoorDef> doors)
+        {
             int id = NextId();
-            var doors = FindOuterDoors(rows, cols, cells);
 
             // Write .tscn file directly as text
             var scenePath = OutputDir + name + ".tscn";

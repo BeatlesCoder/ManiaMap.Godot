@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://bw3jsg7uu2njw" path="res://addons/mpewsey.maniamap/scripts/runtime/generators/GenerationPipeline.cs" id="4_24rdl"]
 [ext_resource type="Script" uid="uid://bb1mpgpxcaqgw" path="res://addons/mpewsey.maniamap/scripts/runtime/generators/GenerationIntInput.cs" id="5_8g857"]
 [ext_resource type="Script" uid="uid://vbt4gpy66dyo" path="res://addons/mpewsey.maniamap/scripts/runtime/generators/LayoutGraphsInput.cs" id="6_2aawm"]
-[ext_resource type="Resource" path="res://samples/2d_rooms/graphs/large_graph_2d.tres" id="7_esaaw"]
+[ext_resource type="Resource" uid="uid://deb0kwqwujusc" path="res://samples/2d_rooms/graphs/large_graph_2d.tres" id="7_esaaw"]
 [ext_resource type="Script" uid="uid://ctte6sh7x4g4v" path="res://addons/mpewsey.maniamap/scripts/runtime/generators/CollectableGroupsInput.cs" id="8_t8pl4"]
 [ext_resource type="Script" uid="uid://dqr8dewby6lwb" path="res://addons/mpewsey.maniamap/scripts/runtime/generators/LayoutGraphSelectorStep.cs" id="9_ld5ga"]
 [ext_resource type="Script" uid="uid://6dn00je1235a" path="res://addons/mpewsey.maniamap/scripts/runtime/generators/LayoutGraphRandomizerStep.cs" id="10_a52k0"]
@@ -39,7 +39,6 @@ LayoutGraphs = [ExtResource("7_esaaw")]
 
 [node name="CollectableGroupsInput" type="Node" parent="GenerationPipeline/Inputs" unique_id=580801021]
 script = ExtResource("8_t8pl4")
-CollectableGroups = []
 
 [node name="Steps" type="Node" parent="GenerationPipeline" unique_id=447064317]
 

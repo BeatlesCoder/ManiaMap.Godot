@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/mpewsey.maniamap/scripts/runtime/RoomNode2D.cs" id="1_room"]
+[ext_resource type="Script" path="res://addons/mpewsey.maniamap/scripts/runtime/DoorNode2D.cs" id="2_door"]
+
+[node name="v2_se" type="Node2D"]
+script = ExtResource("1_room")
+Rows = 2
+Columns = 1
+ActiveCells = [[true], [true]]
+
+[node name="Cell_r0c0" type="ColorRect" parent="."]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 94.0
+offset_bottom = 94.0
+color = Color(0.25, 0.28, 0.35, 1)
+
+[node name="Cell_r1c0" type="ColorRect" parent="."]
+offset_left = 2.0
+offset_top = 98.0
+offset_right = 94.0
+offset_bottom = 190.0
+color = Color(0.25, 0.28, 0.35, 1)
+
+[node name="Doors" type="Node2D" parent="."]
+
+[node name="Door_South_r1c0" type="Node2D" parent="Doors"]
+position = Vector2(48, 176)
+script = ExtResource("2_door")
+AutoAssignDirection = false
+DoorDirection = 1
+Row = 1
+Column = 0
+
+[node name="Door_East_r0c0" type="Node2D" parent="Doors"]
+position = Vector2(80, 48)
+script = ExtResource("2_door")
+AutoAssignDirection = false
+DoorDirection = 2
+Row = 0
+Column = 0
+

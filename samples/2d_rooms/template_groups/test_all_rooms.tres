@@ -1,23 +1,58 @@
-[gd_resource type="Resource" script_class="TemplateGroup" format=3 uid="uid://bupt8af4mptmh"]
+[gd_resource type="Resource" script_class="TemplateGroup" load_steps=53 format=3]
 
-[ext_resource type="Script" uid="uid://bvntr8xean7iy" path="res://addons/mpewsey.maniamap/scripts/runtime/TemplateGroup.cs" id="1_tg"]
-[ext_resource type="Script" uid="uid://k1wsok8j1w3u" path="res://addons/mpewsey.maniamap/scripts/runtime/TemplateGroupEntry.cs" id="2_tge"]
-[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/room_1x1.room_template.tres" id="tpl_0"]
-[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/room_1x2.room_template.tres" id="tpl_1"]
-[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/room_2x1.room_template.tres" id="tpl_2"]
-[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/room_2x2.room_template.tres" id="tpl_3"]
-[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/room_1x3.room_template.tres" id="tpl_4"]
-[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/room_3x2.room_template.tres" id="tpl_5"]
-[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/room_2x3.room_template.tres" id="tpl_6"]
-[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/room_3x3.room_template.tres" id="tpl_7"]
-[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/room_4x3.room_template.tres" id="tpl_8"]
-[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/room_L_2x2.room_template.tres" id="tpl_9"]
-[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/room_L_3x2.room_template.tres" id="tpl_10"]
-[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/room_L_3x3.room_template.tres" id="tpl_11"]
-[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/room_T_2x3.room_template.tres" id="tpl_12"]
-[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/room_T_3x3.room_template.tres" id="tpl_13"]
-[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/room_T_inv_3x3.room_template.tres" id="tpl_14"]
-[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/room_T_4x3.room_template.tres" id="tpl_15"]
+[ext_resource type="Script" path="res://addons/mpewsey.maniamap/scripts/runtime/TemplateGroup.cs" id="1_tg"]
+[ext_resource type="Script" path="res://addons/mpewsey.maniamap/scripts/runtime/TemplateGroupEntry.cs" id="2_tge"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/sq1_n.room_template.tres" id="tpl_0"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/sq1_s.room_template.tres" id="tpl_1"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/sq1_e.room_template.tres" id="tpl_2"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/sq1_w.room_template.tres" id="tpl_3"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/sq1_ns.room_template.tres" id="tpl_4"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/sq1_ew.room_template.tres" id="tpl_5"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/h2_ew.room_template.tres" id="tpl_6"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/h2_ns.room_template.tres" id="tpl_7"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/h2_ne.room_template.tres" id="tpl_8"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/h2_sw.room_template.tres" id="tpl_9"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/v2_ns.room_template.tres" id="tpl_10"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/v2_ew.room_template.tres" id="tpl_11"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/v2_nw.room_template.tres" id="tpl_12"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/v2_se.room_template.tres" id="tpl_13"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/sq4_ne.room_template.tres" id="tpl_14"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/sq4_nw.room_template.tres" id="tpl_15"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/sq4_se.room_template.tres" id="tpl_16"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/sq4_sw.room_template.tres" id="tpl_17"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/sq4_nse.room_template.tres" id="tpl_18"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/sq4_nsw.room_template.tres" id="tpl_19"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/h3_ew.room_template.tres" id="tpl_20"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/h3_ews.room_template.tres" id="tpl_21"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/w23_ns.room_template.tres" id="tpl_22"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/w23_nse.room_template.tres" id="tpl_23"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/t32_ns.room_template.tres" id="tpl_24"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/t32_nsw.room_template.tres" id="tpl_25"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/big9_ns.room_template.tres" id="tpl_26"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/big9_ew.room_template.tres" id="tpl_27"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/big9_cross.room_template.tres" id="tpl_28"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/big9_nse.room_template.tres" id="tpl_29"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/big43_ns.room_template.tres" id="tpl_30"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/big43_cross.room_template.tres" id="tpl_31"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/L2_ns.room_template.tres" id="tpl_32"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/L2_nw.room_template.tres" id="tpl_33"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/L2_we.room_template.tres" id="tpl_34"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/L2_es.room_template.tres" id="tpl_35"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/L32_ns.room_template.tres" id="tpl_36"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/L32_nse.room_template.tres" id="tpl_37"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/L32r_nsw.room_template.tres" id="tpl_38"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/L33_nse.room_template.tres" id="tpl_39"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/L33r_nsw.room_template.tres" id="tpl_40"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/L33_top_sw.room_template.tres" id="tpl_41"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/L33_top_se.room_template.tres" id="tpl_42"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/T23_ns.room_template.tres" id="tpl_43"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/T23_nwe.room_template.tres" id="tpl_44"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/T23_inv_ns.room_template.tres" id="tpl_45"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/T23_inv_swe.room_template.tres" id="tpl_46"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/T33_ns.room_template.tres" id="tpl_47"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/T33_nwe.room_template.tres" id="tpl_48"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/T33_inv_ns.room_template.tres" id="tpl_49"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/T33_inv_swe.room_template.tres" id="tpl_50"]
 
 [sub_resource type="Resource" id="entry_0"]
 script = ExtResource("2_tge")
@@ -83,7 +118,147 @@ RoomTemplate = ExtResource("tpl_14")
 script = ExtResource("2_tge")
 RoomTemplate = ExtResource("tpl_15")
 
+[sub_resource type="Resource" id="entry_16"]
+script = ExtResource("2_tge")
+RoomTemplate = ExtResource("tpl_16")
+
+[sub_resource type="Resource" id="entry_17"]
+script = ExtResource("2_tge")
+RoomTemplate = ExtResource("tpl_17")
+
+[sub_resource type="Resource" id="entry_18"]
+script = ExtResource("2_tge")
+RoomTemplate = ExtResource("tpl_18")
+
+[sub_resource type="Resource" id="entry_19"]
+script = ExtResource("2_tge")
+RoomTemplate = ExtResource("tpl_19")
+
+[sub_resource type="Resource" id="entry_20"]
+script = ExtResource("2_tge")
+RoomTemplate = ExtResource("tpl_20")
+
+[sub_resource type="Resource" id="entry_21"]
+script = ExtResource("2_tge")
+RoomTemplate = ExtResource("tpl_21")
+
+[sub_resource type="Resource" id="entry_22"]
+script = ExtResource("2_tge")
+RoomTemplate = ExtResource("tpl_22")
+
+[sub_resource type="Resource" id="entry_23"]
+script = ExtResource("2_tge")
+RoomTemplate = ExtResource("tpl_23")
+
+[sub_resource type="Resource" id="entry_24"]
+script = ExtResource("2_tge")
+RoomTemplate = ExtResource("tpl_24")
+
+[sub_resource type="Resource" id="entry_25"]
+script = ExtResource("2_tge")
+RoomTemplate = ExtResource("tpl_25")
+
+[sub_resource type="Resource" id="entry_26"]
+script = ExtResource("2_tge")
+RoomTemplate = ExtResource("tpl_26")
+
+[sub_resource type="Resource" id="entry_27"]
+script = ExtResource("2_tge")
+RoomTemplate = ExtResource("tpl_27")
+
+[sub_resource type="Resource" id="entry_28"]
+script = ExtResource("2_tge")
+RoomTemplate = ExtResource("tpl_28")
+
+[sub_resource type="Resource" id="entry_29"]
+script = ExtResource("2_tge")
+RoomTemplate = ExtResource("tpl_29")
+
+[sub_resource type="Resource" id="entry_30"]
+script = ExtResource("2_tge")
+RoomTemplate = ExtResource("tpl_30")
+
+[sub_resource type="Resource" id="entry_31"]
+script = ExtResource("2_tge")
+RoomTemplate = ExtResource("tpl_31")
+
+[sub_resource type="Resource" id="entry_32"]
+script = ExtResource("2_tge")
+RoomTemplate = ExtResource("tpl_32")
+
+[sub_resource type="Resource" id="entry_33"]
+script = ExtResource("2_tge")
+RoomTemplate = ExtResource("tpl_33")
+
+[sub_resource type="Resource" id="entry_34"]
+script = ExtResource("2_tge")
+RoomTemplate = ExtResource("tpl_34")
+
+[sub_resource type="Resource" id="entry_35"]
+script = ExtResource("2_tge")
+RoomTemplate = ExtResource("tpl_35")
+
+[sub_resource type="Resource" id="entry_36"]
+script = ExtResource("2_tge")
+RoomTemplate = ExtResource("tpl_36")
+
+[sub_resource type="Resource" id="entry_37"]
+script = ExtResource("2_tge")
+RoomTemplate = ExtResource("tpl_37")
+
+[sub_resource type="Resource" id="entry_38"]
+script = ExtResource("2_tge")
+RoomTemplate = ExtResource("tpl_38")
+
+[sub_resource type="Resource" id="entry_39"]
+script = ExtResource("2_tge")
+RoomTemplate = ExtResource("tpl_39")
+
+[sub_resource type="Resource" id="entry_40"]
+script = ExtResource("2_tge")
+RoomTemplate = ExtResource("tpl_40")
+
+[sub_resource type="Resource" id="entry_41"]
+script = ExtResource("2_tge")
+RoomTemplate = ExtResource("tpl_41")
+
+[sub_resource type="Resource" id="entry_42"]
+script = ExtResource("2_tge")
+RoomTemplate = ExtResource("tpl_42")
+
+[sub_resource type="Resource" id="entry_43"]
+script = ExtResource("2_tge")
+RoomTemplate = ExtResource("tpl_43")
+
+[sub_resource type="Resource" id="entry_44"]
+script = ExtResource("2_tge")
+RoomTemplate = ExtResource("tpl_44")
+
+[sub_resource type="Resource" id="entry_45"]
+script = ExtResource("2_tge")
+RoomTemplate = ExtResource("tpl_45")
+
+[sub_resource type="Resource" id="entry_46"]
+script = ExtResource("2_tge")
+RoomTemplate = ExtResource("tpl_46")
+
+[sub_resource type="Resource" id="entry_47"]
+script = ExtResource("2_tge")
+RoomTemplate = ExtResource("tpl_47")
+
+[sub_resource type="Resource" id="entry_48"]
+script = ExtResource("2_tge")
+RoomTemplate = ExtResource("tpl_48")
+
+[sub_resource type="Resource" id="entry_49"]
+script = ExtResource("2_tge")
+RoomTemplate = ExtResource("tpl_49")
+
+[sub_resource type="Resource" id="entry_50"]
+script = ExtResource("2_tge")
+RoomTemplate = ExtResource("tpl_50")
+
 [resource]
 script = ExtResource("1_tg")
 Name = "Test All Rooms"
-Entries = [SubResource("entry_0"), SubResource("entry_1"), SubResource("entry_2"), SubResource("entry_3"), SubResource("entry_4"), SubResource("entry_5"), SubResource("entry_6"), SubResource("entry_7"), SubResource("entry_8"), SubResource("entry_9"), SubResource("entry_10"), SubResource("entry_11"), SubResource("entry_12"), SubResource("entry_13"), SubResource("entry_14"), SubResource("entry_15")]
+Entries = [SubResource("entry_0"), SubResource("entry_1"), SubResource("entry_2"), SubResource("entry_3"), SubResource("entry_4"), SubResource("entry_5"), SubResource("entry_6"), SubResource("entry_7"), SubResource("entry_8"), SubResource("entry_9"), SubResource("entry_10"), SubResource("entry_11"), SubResource("entry_12"), SubResource("entry_13"), SubResource("entry_14"), SubResource("entry_15"), SubResource("entry_16"), SubResource("entry_17"), SubResource("entry_18"), SubResource("entry_19"), SubResource("entry_20"), SubResource("entry_21"), SubResource("entry_22"), SubResource("entry_23"), SubResource("entry_24"), SubResource("entry_25"), SubResource("entry_26"), SubResource("entry_27"), SubResource("entry_28"), SubResource("entry_29"), SubResource("entry_30"), SubResource("entry_31"), SubResource("entry_32"), SubResource("entry_33"), SubResource("entry_34"), SubResource("entry_35"), SubResource("entry_36"), SubResource("entry_37"), SubResource("entry_38"), SubResource("entry_39"), SubResource("entry_40"), SubResource("entry_41"), SubResource("entry_42"), SubResource("entry_43"), SubResource("entry_44"), SubResource("entry_45"), SubResource("entry_46"), SubResource("entry_47"), SubResource("entry_48"), SubResource("entry_49"), SubResource("entry_50")]

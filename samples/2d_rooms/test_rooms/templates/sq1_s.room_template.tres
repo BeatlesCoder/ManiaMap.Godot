@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="RoomTemplateResource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/mpewsey.maniamap/scripts/runtime/RoomTemplateResource.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+EditId = false
+Id = 2000117
+TemplateName = "sq1_s"
+ScenePath = "res://samples/2d_rooms/test_rooms/sq1_s.tscn"
+SceneUidPath = ""
+SerializedText = "{\"Id\":2000117,\"Name\":\"sq1_s\",\"Cells\":{\"Rows\":1,\"Columns\":1,\"Array\":[{\"Doors\":{\"Map\":[{\"Key\":1,\"Value\":{\"Type\":0,\"Code\":0}}]},\"Features\":[]}]},\"CollectableSpots\":{\"Map\":[]}}"

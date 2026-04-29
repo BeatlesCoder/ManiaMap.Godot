@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="TemplateGroup" load_steps=4 format=3]
+[gd_resource type="Resource" script_class="TemplateGroup" format=3 uid="uid://bcngy044k0y7"]
 
 [ext_resource type="Script" uid="uid://bvntr8xean7iy" path="res://addons/mpewsey.maniamap/scripts/runtime/TemplateGroup.cs" id="1_tg"]
 [ext_resource type="Script" uid="uid://k1wsok8j1w3u" path="res://addons/mpewsey.maniamap/scripts/runtime/TemplateGroupEntry.cs" id="2_tge"]
