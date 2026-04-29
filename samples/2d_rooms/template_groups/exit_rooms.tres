@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://k1wsok8j1w3u" path="res://addons/mpewsey.maniamap/scripts/runtime/TemplateGroupEntry.cs" id="2_tge"]
 [ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/exit_3x3.room_template.tres" id="tpl_0"]
 [ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/exit_3x4.room_template.tres" id="tpl_1"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/exit_3x2_se.room_template.tres" id="tpl_2"]
+[ext_resource type="Resource" path="res://samples/2d_rooms/test_rooms/templates/exit_3x2_sw.room_template.tres" id="tpl_3"]
 
 [sub_resource type="Resource" id="entry_0"]
 script = ExtResource("2_tge")
@@ -13,7 +15,15 @@ RoomTemplate = ExtResource("tpl_0")
 script = ExtResource("2_tge")
 RoomTemplate = ExtResource("tpl_1")
 
+[sub_resource type="Resource" id="entry_2"]
+script = ExtResource("2_tge")
+RoomTemplate = ExtResource("tpl_2")
+
+[sub_resource type="Resource" id="entry_3"]
+script = ExtResource("2_tge")
+RoomTemplate = ExtResource("tpl_3")
+
 [resource]
 script = ExtResource("1_tg")
 Name = "Exit Rooms"
-Entries = [SubResource("entry_0"), SubResource("entry_1")]
+Entries = [SubResource("entry_0"), SubResource("entry_1"), SubResource("entry_2"), SubResource("entry_3")]

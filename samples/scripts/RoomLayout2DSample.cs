@@ -74,7 +74,7 @@ namespace MPewsey.ManiaMapGodot.Samples
             MessageLabel.Text = "Generating...";
             GenerateButton.Disabled = true;
             var seed = Rand.Random.Next(1, int.MaxValue);
-            var results = await Pipeline.RunAttemptsAsync(seed);
+            var results = await Pipeline.RunAttemptsAsync(seed, logger: msg => GD.Print(msg));
             GenerateButton.Disabled = false;
 
             if (!results.Success)
